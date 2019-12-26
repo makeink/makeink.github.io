@@ -1,832 +1,140 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>Makeink</title>
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            color: #b9b9b9;
-            font-family: Tahoma, Geneva, sans-serif, 微软雅黑;
-            font-size: 12px;
-            line-height: 1.5em;
-            background-color: #ccc;
-            background: url("https://makeink.github.io/pic/bg.jpg") no-repeat fixed ;
-            opacity:0.85;
-        }
-
-        a {
-            text-decoration: none;
-            color: #fff;
-        }
-
-        p {
-            margin: 0px;
-            padding: 0;
-        }
-
-        img {
-            border: none;
-        }
-
-        ul {
-            margin: 0;
-            padding: 0;
-        }
-
-        ul li {
-            margin: 0;
-            padding: 0;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            color: #000;
-        }
-
-        h1 {
-            font-size: 30px;
-            font-weight: normal;
-            margin: 0 0 20px 0;
-            padding: 5px 0;
-            color: #9b9b9b;
-        }
-
-        h2 {
-            font-size: 24px;
-            font-weight: normal;
-            margin: 0 0 20px 0;
-            padding: 10px 0 15px 0;
-            color: #fff;
-        }
-
-        h3 {
-            font-size: 20px;
-            font-weight: normal;
-            margin: 0 0 15px 0;
-            padding: 0;
-            padding: 0 0 10px 0;
-        }
-
-        h4 {
-            font-size: 18px;
-            margin: 0 0 20px 0;
-            padding: 0 0 10px 0;;
-        }
-
-        h5 {
-            font-size: 16px;
-            margin: 0 0 10px 0;
-            padding: 0;
-        }
-
-        h6 {
-            font-size: 14px;
-            margin: 0 0 5px 0;
-            padding: 0;
-        }
-
-        .clear:after {
-            content: "";
-            display: block;
-            height: 0;
-            clear: both;
-        }
-
-        span {
-            color: #20c4d3;
-        }
-
-        /*header开始 */
-        #header {
-            width: 1024px;
-            padding: 0;
-            margin: 0 auto 20px auto;
-        }
-
-        div {
-            display: block;
-        }
-
-        .header-left {
-            float: left;
-            width: 500px;
-            height: 160px;
-            z-index: 1;
-        }
-
-        .header-left > a {
-            display: block;
-            width: 500px;
-            height: 30px;
-            font-size: 16px;
-            color: #fff;
-            margin: 0;
-            padding: 130px 0 0 170px;
-            text-decoration: none;
-            background: url(../images/logo.png) no-repeat top left;
-        }
-
-        .header-right {
-            float: right;
-            width: 260px;
-            padding-top: 30px;
-            text-align: right;
-            z-index: 1;
-        }
-
-        .header-left-btn {
-            width: 260px;
-            margin-top: 30px;
-            padding: 30px 0 0;
-            background: url(../images/newsletter.png) no-repeat top left;
-            z-index: 1;
-        }
-
-        .header-left-btn > input {
-            width: 180px;
-            height: 22px;
-            background: none;
-            color: #333;
-            border: 1px solid #333;
-            padding: 0 5px;
-            z-index: 1;
-
-        }
-
-        .header-left-btn > input + input {
-            width: 63px;
-            height: 23px;
-            cursor: pointer;
-            margin-left: 5px;
-            border-radius: 3px;
-            background: #972D6B;
-            z-index: 1;
-        }
-
-        /*header结束*/
-        /*content开始*/
-        .content {
-            clear: both;
-            background: url(../images/menu.jpg) repeat-x;
-            height: 50px;
-            z-index: 1;
-        }
-
-        .content-menu {
-            width: 984px;
-            height: 50px;
-            padding: 0 20px;
-            margin: 0 auto;
-            background:#4A51D9;
-        }
-
-        .content-menu > ul {
-            list-style: none;
-            height: 33px;
-            padding: 10px 0 0 0;
-        }
-
-        .content-menu > ul li {
-            float: left;
-            margin: 0;
-            padding: 0;
-            display: inline-block;
-        }
-
-        .current {
-            border-radius: 4px;
-        }
-
-        .content-menu ul li > a {
-            float: left;
-            position: relative;
-            display: block;
-            text-decoration: none;
-            color: #fff;
-            font-size: 16px;
-            height: 30px;
-            line-height: 30px;
-            padding-right: 28px;
-            padding-left: 28px;
-            margin-left: 10px;
-            text-align: center;
-        }
-
-        .content-menu ul li > a:hover {
-            background: #0583F2;
-            border-radius: 4px;
-        }
-
-        .content-main {
-            clear: both;
-            position: relative;
-            width: 964px;
-            margin: 0 auto;
-            padding: 0 30px 50px;
-            background: #4A51D9;
-        }
-
-        .content-text {
-            float: left;
-            width: 600px;
-            padding: 30px 30px 30px 0;
-            border-right: 1px dashed #363636;
-        }
-
-        .content-box {
-            border-bottom: 1px dashed #363636;
-            padding-bottom: 30px;
-            margin-bottom: 30px;
-        }
-
-        .content-box h1 > span {
-            color: #20c4d3;
-        }
-
-        .post-box {
-            clear: both;
-            border-bottom: 1px dashed #363636;
-            padding-bottom: 30px;
-            margin-bottom: 30px;
-        }
-
-        .post-text {
-            position: relative;
-            margin-bottom: 10px;
-        }
-
-        .post-text > h2 {
-            margin: 0;
-            padding: 5px 0;
-        }
-
-        .tag > a {
-            color: #777;
-        }
-
-        .post-date {
-            position: absolute;
-            top: 0;
-            right: 0;
-        }
-
-        .post-box > img {
-
-            width: 108px;
-            height: 108px;
-            border: 5px solid #fff;
-        }
-
-        .p-right {
-            float: right;
-            width: 450px;
-        }
-
-        .p-right .comment > a {
-            display: block;
-            color: #da9d0c;
-            font-weight: bold;
-            text-decoration: underline;
-            padding: 3px 0 0 25px;
-            margin-top: 15px;
-            background: url(../images/comment.jpg) no-repeat bottom left;
-        }
-
-        .p-right .comment > a:hover {
-            text-decoration: none;
-            color: #66ff00;
-        }
-
-        .post-last {
-            border: none;
-        }
-
-        .content-bottom {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            background: url(../images/content_bottom.jpg) no-repeat;
-            width: 1024px;
-            height: 60px;
-        }
-
-        #content-sidebar {
-
-            width: 280px;
-            float: right;
-        }
-
-        .sidebar-box {
-            clear: both;
-        }
-
-        .sidebar-box > h3 {
-            width: 190px;
-            height: 38px;
-            margin: 0;
-            padding: 42px 0 0 90px;
-            color: #fff;
-            background: url(../images/site_header.png) no-repeat left top;
-        }
-
-        .sidebar-s {
-            padding: 20px;
-        }
-
-        .sidebar-box a {
-            color: #b9b9b9;
-        }
-
-        .sidebar-menu {
-            list-style: none;
-        }
-
-        .sidebar-menu > li {
-            border-bottom: 1px solid #303030;
-            margin-bottom: 5px;
-            padding: 3px 0;
-        }
-
-        .sidebar-menu li > a {
-            display: block;
-            background: url(../images/li_list.jpg) no-repeat top left;
-            padding-left: 20px;
-        }
-
-        /*content结束*/
-        #bottom {
-            width: 1024px;
-            height: 168px;
-            background: url(../images/footer.jpg) no-repeat;
-            padding-top: 40px;
-            margin: 0 auto;
-        }
-
-        .bottom-box {
-            float: left;
-            width: 256px;
-            margin-left: 20px;
-            padding: 20px 20px 0;
-            background: url(../images/footer_box.png) no-repeat;
-        }
-
-        .bottom-box > h5 {
-            color: #b3b3b3;
-        }
-
-        .bottom-box > a {
-            color: #20c4d3;
-            float: right;
-        }
-
-        .bottom-menu {
-            margin: 20px 0;
-            list-style: none;
-        }
-
-        .bottom-menu > li {
-            background: url(../images/footer_list.png) no-repeat left top;
-            padding: 0 0 3px 15px;
-            margin: 0 0 10px;
-            line-height: 1em;
-        }
-
-        .bottom-menu > li a {
-            color: #b3b3b3;
-            text-decoration: underline;
-        }
-
-        .bottom-menu > li a:hover {
-            text-decoration: none;
-        }
-
-        #footer {
-            clear: both;
-            width: 1024px;
-            margin: 0 auto;
-            padding: 10px 0;
-            text-align: center;
-            color: #999;
-        }
-
-        .footer-menu {
-            margin-bottom: 5px;
-        }
-
-        .footer-menu > li {
-            display: inline-block;
-            border-left: 1px solid #6b6b6b;
-            padding: 0 5px;
-        }
-
-        .footer-menu > li:nth-child(1) {
-            border: none;
-        }
-
-        .footer-menu > li a {
-            color: #999;
-            text-decoration: underline;
-        }
-
-        .footer-menu > li a:hover {
-            color: #d9d9d9;
-            text-decoration: none;
-        }
-
-        #footer > a {
-            font-weight: normal;
-            color: #999;
-            text-decoration: underline;
-        }
-
-        #footer > a:hover {
-            text-decoration: none;
-        }
-
-        /*魔方*/
-        /*最外层容器样式*/
-        .wrap {
-            width: 100px;
-            height: 100px;
-            margin: 150px;
-            margin-left: 1100px;
-            /*position: relative;*/
-            float: right;
-            position: fixed;
-            z-index: 2;
-        }
-
-        /*包裹所有容器样式*/
-        .cube {
-            width: 50px;
-            height: 50px;
-            margin: 0 auto;
-            transform-style: preserve-3d;
-            transform: rotateX(-30deg) rotateY(-80deg);
-            animation: rotate linear 20s infinite;
-        }
-
-        @-webkit-keyframes rotate {
-            from {
-                transform: rotateX(0deg) rotateY(0deg);
-            }
-            to {
-                transform: rotateX(360deg) rotateY(360deg);
-            }
-        }
-
-        .cube div {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            opacity: 0.8;
-            transition: all .4s;
-        }
-
-        /*定义所有图片样式*/
-        .pic {
-            width: 200px;
-            height: 200px;
-        }
-
-        .cube .out_front {
-            transform: rotateY(0deg) translateZ(100px);
-        }
-
-        .cube .out_back {
-            transform: translateZ(-100px) rotateY(180deg);
-        }
-
-        .cube .out_left {
-            transform: rotateY(-90deg) translateZ(100px);
-        }
-
-        .cube .out_right {
-            transform: rotateY(90deg) translateZ(100px);
-        }
-
-        .cube .out_top {
-            transform: rotateX(90deg) translateZ(100px);
-        }
-
-        .cube .out_bottom {
-            transform: rotateX(-90deg) translateZ(100px);
-        }
-
-        /*定义小正方体样式*/
-        .cube span {
-            display: block;
-            width: 100px;
-            height: 100px;
-            position: absolute;
-            top: 50px;
-            left: 50px;
-        }
-
-        .cube .in_pic {
-            width: 100px;
-            height: 100px;
-        }
-
-        .cube .in_front {
-            transform: rotateY(0deg) translateZ(50px);
-        }
-
-        .cube .in_back {
-            transform: translateZ(-50px) rotateY(180deg);
-        }
-
-        .cube .in_left {
-            transform: rotateY(-90deg) translateZ(50px);
-        }
-
-        .cube .in_right {
-            transform: rotateY(90deg) translateZ(50px);
-        }
-
-        .cube .in_top {
-            transform: rotateX(90deg) translateZ(50px);
-        }
-
-        .cube .in_bottom {
-            transform: rotateX(-90deg) translateZ(50px);
-        }
-
-        /*鼠标移入后样式*/
-        .cube:hover .out_front {
-            transform: rotateY(0deg) translateZ(200px);
-        }
-
-        .cube:hover .out_back {
-            transform: translateZ(-200px) rotateY(180deg);
-        }
-
-        .cube:hover .out_left {
-            transform: rotateY(-90deg) translateZ(200px);
-        }
-
-        .cube:hover .out_right {
-            transform: rotateY(90deg) translateZ(200px);
-        }
-
-        .cube:hover .out_top {
-            transform: rotateX(90deg) translateZ(200px);
-        }
-
-        .cube:hover .out_bottom {
-            transform: rotateX(-90deg) translateZ(200px);
-        }
-    </style>
+    <title>Makeinkの博客</title>
+    <Meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
-
-<!-- 外层最大容器 -->
-<div class="wrap">
-    <!--包裹所有元素的容器-->
-    <div class="cube">
-        <!--前面图片 -->
-        <div class="out_front">
-            <img src="https://i.loli.net/2018/05/03/5aeb0eef73838.jpg" class="pic">
+<div class="head">
+    <div class="greet">
+        <span class="sp1">&nbsp;&nbsp;(｡•̀ᴗ-)✧</span>
+        <span class="sp2">欢迎来到Makeinkの个人空间ε٩(๑‾ ꇴ ‾๑)۶з!!!!&nbsp;&nbsp;&nbsp;</span>
+    </div>
+    <div class="row1">
+        <div class="sign">
+            <a class="sign_a" href="index.html">Makeinkの博客</a>
         </div>
-        <!--后面图片 -->
-        <div class="out_back">
-            <img src="https://i.loli.net/2018/05/03/5aeb0f2fb9a83.jpg" class="pic">
-        </div>
-        <!--左面图片 -->
-        <div class="out_left">
-            <img src="https://i.loli.net/2018/05/03/5aeb0f55411f0.jpg" class="pic">
-        </div>
-        <!--右面图片 -->
-        <div class="out_right">
-            <img src="https://i.loli.net/2018/05/03/5aeb0f79a1124.jpg" class="pic">
-        </div>
-        <!--上面图片 -->
-        <div class="out_top">
-            <img src="https://i.loli.net/2018/05/03/5aeb0f98a8b66.jpg" class="pic">
-        </div>
-        <!--下面图片 -->
-        <div class="out_bottom">
-            <img src="https://i.loli.net/2018/05/03/5aeb0fdd51b7e.jpg" class="pic">
-        </div>
-
-        <!--小正方体 -->
-        <span class="in_front">
-                <img src="https://i.loli.net/2018/05/03/5aeb100223dd0.jpg" class="in_pic">
-            </span>
-        <span class="in_back">
-                 <img src="https://i.loli.net/2018/05/03/5aeb101c2c24b.jpg" class="in_pic">
-            </span>
-        <span class="in_left">
-                <img src="https://i.loli.net/2018/05/03/5aeb1038127b5.jpg" class="in_pic">
-            </span>
-        <span class="in_right">
-                <img src="https://i.loli.net/2018/05/03/5aeb0dce1ca55.jpg" class="in_pic">
-            </span>
-        <span class="in_top">
-                <img src="https://i.loli.net/2018/05/03/5aeb1057bb167.jpg" class="in_pic">
-            </span>
-        <span class="in_bottom">
-                <img src="https://i.loli.net/2018/05/03/5aeb107514579.jpg" class="in_pic">
-            </span>
     </div>
 </div>
+
+<div class="banner">
+    <div class="banner_l"><img src="pic/bl.jpg"></div>
+
+    <div class="banner_r">
+        <div class="banner_pic">
+            <img src="pic/br1.jpg">
+        </div>
+        <div class="btns">
+            <div class="btn_l"><img src="pic/btn_l.png"></div>
+            <div class="btn_r"><img src="pic/btn_r.png"></div>
+        </div>
+    </div>
 </div>
 
-<!--header开始-->
-<div id="header">
-    <div class="header-left">
-        <a href="#">makeink的博客空间</a></div>
+<div class="contents">
+    <div class="catalog">
+        <div id="txt_catalog" class="text">目录</div>
+        <hr class="hr_s hr_catalog_up"/>
+        <div class="catalog_ul">
+            <div class="catalog_content">再见仍是华年</div>
+            <div class="catalog_content">对弈</div>
+            <div class="catalog_content">笔下人</div>
+            <div class="catalog_content">奈何，星落</div>
+            <div class="catalog_content">春初盛面</div>
+            <div class="catalog_content">拈花煮酒</div>
+            <div class="catalog_content">那年花落</div>
+            <div class="catalog_content">红尘客</div>
+            <div class="catalog_content">不期而遇</div>
+        </div>
 
+        <hr class="hr_s hr_catalog_down"/>
+    </div>
+
+    <div class="article">
+        <div id="txt_article" class="text">内容</div>
+        <hr class="hr_s hr_article"/>
+        <div class="article_content">
+            <p>
+                时至今日，我才恍然察觉。世上其它不足道，唯你我而已。
+            </p>
+            <hr class="hr_content"/>
+            <p>
+                初见时，我就早应料到，可那春光三分而你满目，清冷犹胜未消的冰雪。
+            </p>
+            <hr class="hr_content"/>
+            <p>
+                现在想来，人间从那时便已圆满。
+            </p>
+            <hr class="hr_content"/>
+            <p>
+                再见时，落雨轻轻，花盛的惊心触目，撑伞而过的你，比，相形见绌，所以花会落吧。
+            </p>
+            <hr class="hr_content"/>
+            <p>
+                我自然是不敢满心欢喜的，只是，世上多了一幅画，画不绝世，而人不然。
+            </p>
+            <hr class="hr_content"/>
+            <p>
+                而后，我再无你的音讯，世上只余我一人，不孤，画满心。
+            </p>
+            <hr class="hr_content"/>
+            <p>
+                怎敢？岂敢？耳边却见你那时说：“你我之命却终是不在此处，世上远非我你两人”，
+            </p>
+            <hr class="hr_content"/>
+            <p>
+                你脸上的笑意清浅，可我知道，风霜薄散却犹有心寒。
+            </p>
+            <hr class="hr_content"/>
+            <p>
+                回忆如潮水将我溺于此中。你我几场便是一世，于你不值。
+            </p>
+            <hr class="hr_content"/>
+            <p>
+                落日山上树下，你一袭红衣，漫天的枫叶也黯了颜色。可绢白得刺心。
+            </p>
+            <hr class="hr_content"/>
+            <p>
+                然世界终是以圆满而结束，我犹胜半筹，哪怕不知归处。如此，亦是再见。
+            </p>
+            <hr class="hr_content"/>
+        </div>
+
+    </div>
+
+    <div class="about">
+        <div id="about_me" class="text">关于</div>
+
+        <hr class="hr_s hr_about"/>
+        <div class="about_content">
+            <span>这是我的个人博客，嗯，作用不大，也不是很好看，但自己还是花了一点心思。</span>
+            <br>
+            <p>暂时就这样</p>
+            <p>
+                但是还是很多地方没做出来，banner的图片转动，内容是手动排版的（这太糟糕了），目录无法点击，脚部是会向上浮动，
+                为此我暂时让内容无法随文章长度自动变长，还有就是没有特效。
+            </p>
+
+            <p>ok，就这样。</p>
+        </div>
+    </div>
 </div>
-<!--header结束-->
 
 <script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.0.4/lib/L2Dwidget.min.js"></script>
 <script type="text/javascript">
     L2Dwidget.init();
 </script>
-<div id="live2d-widget" style="border: none;">
-    <canvas id="live2dcanvas"  style="position: fixed;
-            bottom: -20px; z-index: 99999; pointer-events: none; border: none;">
+<div id="live2d-widget">
+    <canvas id="live2dcanvas" width="300" height="600"
+            style="position: fixed; opacity: 0.7;  bottom: -20px; z-index: 99999; pointer-events: none; border: 0px dashed rgb(204, 204, 204);">
     </canvas>
 </div>
 
-<!--中间开始-->
-<div class="content clear">
-    <div class="content-menu  clear">
-        <ul>
-            <li><a href="#" class="current">家</a></li>
-            <li><a href="#">Web 2.0</a></li>
-            <li><a href="#">模板</a></li>
-            <li><a href="#">图像</a></li>
-            <li><a href="#">灵感</a></li>
-            <li><a href="#">Flash文件</a></li>
-        </ul>
-    </div>
+<div class="tail">
+    <div class="record">©2018-2019 Makeinkの博客 , Inc. All rights reserved.</div>
+    <div class="contact">疑问建议/欢迎联系：522032421@qq.com</div>
 </div>
 
-<div class="content-main clear">
-    <div class="content-text">
-        <div class="content-box">
-            <h1>短信息的<span>网络技术博客</span></h1>
-            <p>从大众生活。Donec iaculis蚤这样做无论是。目前杂色山雀egestas
-                velit。只要质量Vulputate足排球。索尼和宣传。然而可悲的是，现在的足球需要一只脚。对于很多刚刚释放开发商的资产。明日是一个伟大的愿望，马蒂斯pellentesque，救生钳，feugiat简历，SAPIEN。Fusce交流奥奇condimentum坐阿梅德velit
-                ultrices。整数imperdiet posuere交流，爱欲。这个质量。现在继电器。LOREM箭头和真人娱乐场。</p>
-        </div>
-
-        <div class="post-box">
-            <div class="post-text">
-                <h2><a href="#">当拉手光芒甚至</a></h2>
-                <div class="tag"><strong>标签：</strong><a href="#">音乐</a>，<a href="#">免费的照片</a>，<a href="#">HDR</a></div>
-                <span class="post-date"><strong>2010年</strong>2月25日</span>
-            </div>
-
-            <img src="images/image_01.jpg"/>
-            <div class="p-right">
-                <p>清单本地产。前庭ullamcorper存有NEC augue。猫需要恨。现在请，永远值得保留欧盟开发和临床表现大颤动车现在是免费的。即使是质量或胁迫的成员。Mauris最大的开发商和香蕉的影响。</p>
-                <div class="comment"><a href="#">评论</a></div>
-
-            </div>
-        </div>
-        <div class="post-box">
-            <div class="post-text">
-                <h2><a href="#">每个无颤动</a></h2>
-                <div class="tag"><strong>标签：</strong><a href="#">音乐</a>，<a href="#">免费的照片</a>，<a href="#">版税</a></div>
-                <span class="post-date"><strong>2010年</strong>2月25日</span>
-            </div>
-            <img src="images/image_02.jpg"/>
-            <div class="p-right">
-                <p>
-                    最新价格门硬件。临床直径胡萝卜温度哀悼营养。有杂乱锅伤心房地产开发商。活酵母临床漫画出版。在伟大的，也没有非常的事已经说了。直到性能和笑声。现在说大众足球方便，担心车辆LOREM，和脚的足球宣传。500</p>
-                <div class="comment"><a href="#">评论</a></div>
-            </div>
-        </div>
-        <div class="post-box">
-            <div class="post-text">
-                <h2><a href="#">每个无颤动</a></h2>
-                <div class="tag"><strong>标签：</strong><a href="#">闪光</a>，<a href="#">免费文件</a>，<a href="#">AS3</a></div>
-                <span class="post-date"><strong>2010年</strong>2月25日</span>
-            </div>
-            <img src="images/image_02.jpg"/>
-            <div class="p-right">
-                <p>规划聊天扣除狮子。直到辣椒或辣椒保健地产。但是现在电视。但孩子们投入宣传。Mauris PEDE nisl，placerat NEC，lobortis简历，有人说，但不是，都不是。</p>
-                <div class="comment"><a href="#">评论</a></div>
-            </div>
-        </div>
-        <div class="post-box post-last">
-            <div class="post-text">
-                <h2><a href="#">没有智能手机，但该箭头的价格</a></h2>
-                <div class="tag"><strong>标签：</strong><a href="#">HTML</a>，<a href="#">模板</a>，<a href="#">CSS</a></div>
-                <span class="post-date"><strong>2010年</strong>2月25日</span>
-            </div>
-            <img src="images/image_03.jpg"/>
-            <div class="p-right">
-                <p>每个酱只是在员工的后院。从比赛的直播。当拉手光芒超级碗山瞬间。Eget等dapibus sagittis velit QUIS tortor tincidunt aliquet。Vivamus LEO
-                    velit，convallis ID，ultrices坐阿梅德，tempor一，自由人。</p>
-                <div class="comment"><a href="#">评论</a></div>
-            </div>
-        </div>
-    </div>
-    <div id="content-sidebar">
-        <div class="sidebar-box">
-            <h3>标签云</h3>
-            <div class="sidebar-s">
-                <a href="#" style="font-size:12px">HTML</a> <a href="#" style="font-size:11px">Cursus</a> <a href="#"
-                                                                                                             style="font-size:16px">Maecenas</a>
-                <a href="#" style="font-size:11px">Aliquam Ligula</a> <a href="#" style="font-size:20px">Egestas</a> <a
-                    href="#" style="font-size:16px">Suscipit</a> <a href="#" style="font-size:12px">Sapien</a> <a
-                    href="#" style="font-size:28px">Dignissim</a> <a href="#" style="font-size:14px">Vestibulum</a> <a
-                    href="#" style="font-size:12px">Lorem</a> <a href="#" style="font-size:14px">Urnain</a> <a href="#"
-                                                                                                               style="font-size:20px">Neque</a>
-                <a href="#" style="font-size:12px">Aenean</a>
-            </div>
-        </div>
-
-        <div class="sidebar-box">
-            <h3>类别</h3>
-            <div class="sidebar-s">
-                <ul class="sidebar-menu">
-                    <li><a href="#">CSS技巧</a></li>
-                    <li><a href="#">网页设计技巧</a></li>
-                    <li><a href="#">最好的壁纸</a></li>
-                    <li><a href="#">字体</a></li>
-                    <li><a href="#">Photoshop教程</a></li>
-                    <li><a href="#">3D动画教程</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="sidebar-box">
-            <h3>档案</h3>
-            <div class="sidebar-s">
-                <ul class="sidebar-menu">
-                    <li><a href="#">模板</a></li>
-                    <li><a href="#">设计理念</a></li>
-                    <li><a href="#">免费壁纸</a></li>
-                    <li><a href="#">免费像素字体</a></li>
-                    <li><a href="#">插画教程</a></li>
-                    <li><a href="#">3D人物教程</a></li>
-                </ul>
-            </div>
-        </div>
-
-
-        <div class="sidebar-box">
-            <h3>我们的朋友</h3>
-            <div class="sidebar-s">
-                <ul class="sidebar-menu">
-                    <li><a href="#">Flash文件</a></li>
-                    <li><a href="#">免费模板</a></li>
-                    <li><a href="#">网页设计技巧</a></li>
-                    <li><a href="#">闪存XML画廊</a></li>
-                    <li><a href="#">鼓舞人心的Flash网站</a></li>
-
-                </ul>
-            </div>
-        </div>
-    </div>
-    <span class="content-bottom"></span>
-</div>
-<!--中间结束-->
-<!--底部开始-->
-<div id="bottom" class="clear">
-    <div class="bottom-box">
-        <h5><span>但是到处</span>按摩NIBH</h5>
-        <p>DUIS简历velit sed的DUI malesuada dignissim。直到软香蕉网络。保护者本科元素本身。</p>
-        <a href="#">更多信息</a>
-    </div>
-
-    <div class="bottom-box">
-        <h5><span>Lorem存有</span>胡萝卜</h5>
-        <p>制造业抵扣，是该雇员排球，生态纯净宣传的那么伤心，现在没有自由。</p>
-        <a href="#">更多信息</a>
-    </div>
-
-    <div class="bottom-box">
-        <h5><span>最近的</span>帖子</h5>
-        <ul class="bottom-menu">
-            <li><a href="#">DUIS简历velit sed的lesuada资产。</a></li>
-            <li><a href="#">直到软香蕉网络。</a></li>
-            <li><a href="#">保护者本科元素本身。</a></li>
-        </ul>
-        <a href="#">更多信息</a>
-    </div>
-</div>
-<!--底部结束-->
-<!--footer开始-->
-<div id="footer" class="clear">
-    <ul class="footer-menu">
-        <li><a href="#">家</a></li>
-        <li><a href="#">Web 2.0的</a></li>
-        <li><a href="#">网站</a></li>
-        <li><a href="#">图像</a></li>
-        <li><a href="#">灵感</a></li>
-        <li><a href="#">赠品</a></li>
-    </ul>
-    版权所有 © 2048 <a href="#">你的公司名称</a> | 验证 <a href="#">XHTML</a> 和 <a href="#">CSS</a>
-</div>
-<!--footer结束-->
 </body>
 </html>
