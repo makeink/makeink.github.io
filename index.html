@@ -3,6 +3,8 @@
 <head>
     <title>Makeinkの博客</title>
     <Meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,
+    maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
     <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
@@ -119,12 +121,6 @@
         </div>
     </div>
 
-    <div id="live2d-widget">
-        <canvas id="live2dcanvas" width="300" height="600"
-                style="position: fixed; opacity: 0.7;  bottom: -20px; z-index: 99999; pointer-events: none; border: 0px dashed rgb(204, 204, 204);">
-        </canvas>
-    </div>
-
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.0.4/lib/L2Dwidget.min.js"></script>
@@ -132,7 +128,13 @@
     L2Dwidget.init();
 </script>
 
-<hr class="tail_null" />
+<div id="live2d-widget">
+    <canvas id="live2dcanvas" width="300" height="600"
+            style="position: fixed; opacity: 0.7;  bottom: -20px; z-index: 99999; pointer-events: none; border: 0px dashed rgb(204, 204, 204);">
+    </canvas>
+</div>
+
+<hr class="tail_null"/>
 
 <div class="tail">
     <div class="record">©2018-2019 Makeinkの博客 , Inc. All rights reserved.</div>
