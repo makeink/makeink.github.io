@@ -104,10 +104,8 @@ body {
 
 .contents {
     width: 90%;
-    height: 700px;
     padding-left: 5%;
     padding-top: 1%;
-
 }
 
 .catalog {
@@ -207,21 +205,32 @@ body {
     color: #92B0AE;
 }
 
-.hr_content{
+.hr_content {
     border: 1px solid #EA655E;
     opacity: 0.5;
 }
 
-.tail{
+.tail_null{
+    height: 1%;
+    background: #F3F3F3;
+    clear: both;
+    opacity: 0;
+}
+
+
+.tail {
     height: 150px;
     width: 100%;
     background: #3A3A3A;
     text-align: center;
+    padding-top: 1%;
+    clear: both;
 }
-.record{
+
+.record {
     padding-top: 40px;
 }
 
-.contact{
+.contact {
     padding-top: 10px;
 }
